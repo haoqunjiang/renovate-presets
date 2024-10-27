@@ -1,0 +1,44 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    "schedule:weekly",
+    "group:allNonMajor",
+    "helpers:disableTypesNodeMajor",
+    ":widenPeerDependencies",
+    ":semanticCommitTypeAll(chore)"
+
+    // For my own library projects, I'm very selective on dependencies,
+    // so the unpublishSafe rule is not needed.
+    // But in an application project with lots of external dependencies,
+    // it's safer to enable it.
+    // "npm:unpublishSafe"
+  ],
+
+  // Most of the time I'm writing libraries so `bump` makes more sense to me than `auto`
+  "rangeStrategy": "bump",
+  "labels": ["dependencies"],
+
+  // TODO:
+  // Fix node & @types/node strategy
+  // Should be scheduled on May 1th on every year,
+  // because the previous LTS version reaches EOL on April 30th
+  "ignoreDeps": ["node"],
+
+  "packageRules": [
+    // It's easier to deal with all the Vite plugins at once when Vite ships a new major version
+    {
+      "extends": ["packages:vite"],
+      "groupName": "vite"
+    },
+
+    // TypeScript doesn't follow semver, so we need to separate minor and patch updates
+    // <https://www.semver-ts.org/1-background.html>
+    {
+      "matchDepNames": ["typescript"],
+      "groupName": "typescript",
+      "separateMinorPatch": true,
+      "separateMultipleMinor": true
+    }
+  ]
+}
