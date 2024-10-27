@@ -39,6 +39,13 @@
       "groupName": "typescript",
       "separateMinorPatch": true,
       "separateMultipleMinor": true
+    },
+
+    // Minor releases for v0.x packages may contain breaking changes
+    {
+      "matchCurrentVersion": "/^0./",
+      "groupName": "v0.x",
+      "separateMinorPatch": true
     }
   ]
 }
