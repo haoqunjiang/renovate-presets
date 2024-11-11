@@ -33,7 +33,7 @@
     // It's easier to deal with all the Vite plugins at once when Vite ships a new major version
     {
       "extends": ["packages:vite"],
-      "groupName": "vite"
+      "groupName": "vite packages"
     },
 
     // TypeScript doesn't follow semver, so we need to separate minor and patch updates
