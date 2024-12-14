@@ -15,6 +15,9 @@
     // "npm:unpublishSafe"
   ],
 
+  // Should update internal deps in a monorepo
+  "updateInternalDeps": true,
+
   // The default value 2 only makes sense when onboarding with a config that could create too many PRs.
   // For this preset, 5 is a more reasonable expectation (cosidering there're only so many groups).
   "prHourlyLimit": 5,
