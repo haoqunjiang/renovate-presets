@@ -48,6 +48,15 @@
       "separateMultipleMinor": true
     },
 
+    // Prettier, when used as a devDependency to format code, should be pinned.
+    // SemVer only applies to its API, not its formatting behavior.
+    {
+      "matchDepNames": ["prettier"],
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "prettier",
+      "rangeStrategy": "pin"
+    },
+
     // Minor releases for v0.x packages may contain breaking changes
     {
       "matchCurrentVersion": "/^0./",
