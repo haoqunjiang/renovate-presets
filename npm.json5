@@ -49,6 +49,14 @@
       "separateMultipleMinor": true
     },
 
+    // eslint-plugin-vue suggests to use `~` range starting from v10
+    {
+      "matchDepNames": ["eslint-plugin-vue"],
+      "matchNewValue": "10.*",
+      "groupName": "eslint-plugin-vue",
+      "rangeStrategy": "tilde"
+    },
+
     // Prettier, when used as a devDependency to format code, should be pinned.
     // SemVer only applies to its API, not its formatting behavior.
     {
