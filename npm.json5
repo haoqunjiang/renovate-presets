@@ -66,6 +66,12 @@
       "rangeStrategy": "pin"
     },
 
+    // Update Oxlint packages together
+    {
+      "matchDepNames": ["oxlint", "eslint-plugin-oxlint"],
+      "groupName": "oxlint"
+    },
+
     // Minor releases for v0.x packages may contain breaking changes
     {
       "matchCurrentVersion": "/^0./",
